@@ -1,0 +1,5 @@
+{
+  "MONGODB_CONNECTION" : "connection",
+  "PORT" : "port",
+  "JWTKEY" : "key"
+}

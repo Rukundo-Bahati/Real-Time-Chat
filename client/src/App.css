@@ -1,0 +1,117 @@
+:root {
+  /* Light theme variables */
+  --yellow: #ca2cf5;
+  --orange: #f11ffc;
+  --black: #242d49;
+  --gray: rgba(36, 45, 73, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: rgba(255, 255, 255, 0.991);
+  --buttonBg: linear-gradient(98.63deg, #a036d3 0%, #d33687 100%);
+  --inputColor: #28343e12;
+  --photo: #4cb256;
+  --video: #4a4eb7;
+  --bgdark: #100f46;
+  --bgwhite: #eeeeee;
+  --location: #ef5757;
+  --shedule: #e1ae4a;
+  --bgblur1: #98e4f3;
+  --bgblur2: #540bc3;
+}
+
+/* Default (light theme) */
+.App {
+  overflow: hidden;
+  color: var(--black);
+  background: var(--bgwhite);
+  padding: 1rem 1rem;
+}
+
+/* Dark theme */
+
+/* blur */
+.blur {
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: var(--bgblur1);
+  filter: blur(72px);
+}
+
+[data-theme="dark"] {
+  --yellow: #ca2cf5;
+  --orange: #f11ffc;
+  --black: #ffffff;
+  --gray: rgba(255, 255, 255, 0.65);
+  --profileshadow: 0px 4px 17px 2px rgba(255, 255, 255, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: #1e1f5a;
+  --buttonBg: linear-gradient(98.63deg, #a036d3 0%, #d33687 100%);
+  --inputColor: #b9d5ec12;
+  --photo: #4cb256; /* same as light theme */
+  --video: #4a4eb7; /* same as light theme */
+  --bgwhite: #100f46; /* same as light theme */
+  --location: #ef5757;
+  --shedule: #e1ae4a;
+  --bgblur2: #98e4f3;
+  --bgblur1: #540bc3;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--buttonBg);
+  /* transition: all 100ms ease-out; */
+  transition: all 0.6s ease-out;
+}
+
+.button:hover {
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  cursor: pointer;
+  background: transparent;
+}
+
+.button:disabled {
+  background: silver;
+  pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Form Styling */
+.infoForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.infoInput {
+  border: none;
+  outline: none;
+  background-color: var(--inputColor);
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1;
+}
+
+.infoForm > div {
+  display: flex;
+  gap: 1rem;
+  height: 2rem;
+  width: 90%;
+}
+
+.infoButton {
+  width: 6rem;
+  height: 2rem;
+  align-self: flex-end;
+}
