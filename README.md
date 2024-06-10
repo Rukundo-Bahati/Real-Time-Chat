@@ -72,31 +72,7 @@ Usage
 Open your browser and go to http://localhost:3000.
 Register a new account or log in with an existing account.
 Start chatting with online users!
-Project Structure
-plaintext
-Copy code
-my-project/
-├── server/
-│ ├── connection/
-│ │ └── db.js
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── socket/
-│ │ └── index.js
-│ ├── index.js
-│ └── .env
-├── client/
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── redux/
-│ │ ├── App.js
-│ │ └── index.js
-│ └── .env
-├── README.md
-└── package.json
+
 Contributing
 Contributions are welcome! Please follow these steps:
 Real-Time Chat
