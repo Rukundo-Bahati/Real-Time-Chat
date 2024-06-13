@@ -1,5 +1,6 @@
 # Real-Time-Chat
 <h1>MERN Chat App</h1>
+![chat](https://github.com/Rukundo-Bahati/Real-Time-Chat/assets/150172206/5e94e5d1-d524-4a86-b564-850918460633)
 
 A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.
 
