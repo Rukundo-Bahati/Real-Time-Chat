@@ -1,6 +1,7 @@
 <h1>MERN Chat App</h1>
 
-A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.
+A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) 
+and Socket.io for real-time communication.
 
 <h3>Features</h3>
 🔐 User Authentication: Secure login and registration using JWT.
@@ -73,29 +74,7 @@ Register a new account or log in with an existing account.
 Start chatting with online users!
 Project Structure
 plaintext
-Copy code
-my-project/
-├── server/
-│ ├── connection/
-│ │ └── db.js
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── socket/
-│ │ └── index.js
-│ ├── index.js
-│ └── .env
-├── client/
-│ ├── public/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── redux/
-│ │ ├── App.js
-│ │ └── index.js
-│ └── .env
-├── README.md
-└── package.json
+
 Contributing
 Contributions are welcome! Please follow these steps:
 Real-Time Chat
