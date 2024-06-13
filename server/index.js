@@ -30,7 +30,7 @@ app.use(cors());
 app.use(express.static("public"));
 app.use("/images", express.static("images"));
 
-const PORT = process.env.PORT || 3400;
+const PORT = process.env.PORT || 5000;
 
 app.use("/auth", AuthRoute);
 app.use("/user", UserRoute);

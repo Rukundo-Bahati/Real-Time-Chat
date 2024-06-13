@@ -1,4 +1,5 @@
 import UserModel from "../models/userModel.js";
+import config from 'config'
 import auth from "../middleware/AuthMiddleware.js";
 import  admin from "../middleware/admin.js";
 
@@ -56,10 +57,11 @@ export const updateUser = async (req, res) => {
         new: true,
       });
       const token = jwt.sign(
-        { username: user.username, id: user._id },
-        process.env.JWTKEY,
-        { expiresIn: "1h" }
+        { username: user.username, id: user._id }, // First argument: payload
+        config.get(JWTKEY),                        // Second argument: secret or private key
+        { expiresIn: "1d" }                        // Third argument: options object
       );
+      
       console.log({ user, token });
       res.status(200).json({ user, token });
     } catch (error) {
