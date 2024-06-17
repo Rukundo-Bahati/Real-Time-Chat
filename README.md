@@ -1,5 +1,4 @@
 # Real-Time-Chat
-<h1>Real Time Chat</h1>
 A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.
 
 <h3>Features</h3>
