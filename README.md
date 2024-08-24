@@ -1,5 +1,5 @@
-⭐# Real-Time-Chat⭐
-A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.
+<h1>⭐# Real-Time-Chat⭐</h1>
+<p>A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.</p>
 
 <h3>Features</h3>
 🔐 User Authentication: Secure login and registration using JWT.
