@@ -56,11 +56,7 @@ MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 Run the server:
 
-bash
-Copy code
-cd ../server
-npm run dev
-Run the client:
+
 
 bash
 Copy code
@@ -70,11 +66,6 @@ Usage
 Open your browser and go to http://localhost:3000.
 Register a new account or log in with an existing account.
 Start chatting with online users!
-
-Contributing
-Contributions are welcome! Please follow these steps:
-Real-Time Chat
-Welcome to the Real-Time Chat repository! This project is a fully functional real-time chat application built with the MERN (MongoDB, Express.js, React, Node.js) stack. It leverages WebSockets for instant communication, providing a seamless and interactive messaging experience.
 
 Features
 Real-Time Messaging: Send and receive messages instantly using WebSockets.
@@ -106,55 +97,12 @@ git clone https://github.com/your-username/real-time-chat.git
 cd real-time-chat
 Install dependencies for the backend:
 
-bash
-Copy code
-cd backend
-npm install
-Install dependencies for the frontend:
-
-bash
-Copy code
-cd ../frontend
-npm install
-Set up environment variables:
-Create a .env file in the backend directory and add the following environment variables:
-
 env
 Copy code
 MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 PORT=5000
 Run the backend server:
-
-bash
-Copy code
-cd backend
-npm start
-Run the frontend development server:
-
-bash
-Copy code
-cd ../frontend
-npm start
-Access the application:
-Open your browser and navigate to http://localhost:3000.
-
-Usage
-Register an account: Sign up with your email and password.
-Login: Use your credentials to log in.
-Create or join a chat room: Start a new conversation or join an existing one.
-Send messages: Chat in real-time with other users in the chat room.
-View message history: See the history of conversations in the chat room.
-Contributing
-We welcome contributions to enhance the functionality and performance of the Real-Time Chat application. To contribute, please follow these steps:
-
-Fork the repository.
-Create a new branch for your feature or bugfix.
-Make your changes and commit them with clear and concise messages.
-Push your changes to your fork.
-Create a pull request describing your changes.
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 Acknowledgements
 Socket.IO for real-time communication.
@@ -169,4 +117,4 @@ Thank you for using Real-Time Chat! We hope you enjoy using it as much as we enj
 
 Email: rukundorca@gmail.com
 LinkedIn: https://www.linkedin.com/in/bahati-samuel-293578302/
-GitHub: https://github.com/Rukundo-Bahati?tab=repositories
+GitHub: https://github.com/Rukundo-Bahati
