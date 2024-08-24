@@ -1,4 +1,4 @@
-# Real-Time-Chat
+⭐# Real-Time-Chat⭐
 A real-time chat application built using the MERN stack (MongoDB, Express.js, React.js, Node.js) and Socket.io for real-time communication.
 
 <h3>Features</h3>
@@ -8,12 +8,7 @@ A real-time chat application built using the MERN stack (MongoDB, Express.js, Re
 📂 File Uploads: Share images and files within the chat.
 📜 Chat History: Persistent chat history stored in MongoDB.
 🌐 Responsive Design: Fully responsive design for desktop and mobile.
-Screenshots
-
-Login Screen
-
-Chat Screen
-
+<hr>
 <h3>Tech Stack</h3>
 <h4>Frontend:</h4>
 React.js
@@ -56,65 +51,83 @@ MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 Run the server:
 
-
+<hr>
 
 bash
+<br>
 Copy code
+<br>
 cd ../client
+<br>
 npm start
+<br>
 Usage
 Open your browser and go to http://localhost:3000.
+<br>
 Register a new account or log in with an existing account.
+<br>
 Start chatting with online users!
-
+<hr>
 Features
 Real-Time Messaging: Send and receive messages instantly using WebSockets.
+<br>
 User Authentication: Secure user registration and login with JWT (JSON Web Tokens).
+<br>
+
 Chat Rooms: Create and join chat rooms to converse with multiple participants.
+<br>
 Private Messaging: Send direct messages to individual users.
+<br>
 Message History: Persistent message history stored in MongoDB.
+<br>
 Responsive Design: Fully responsive UI for an optimal experience on both desktop and mobile devices.
-Technologies Used
-Frontend:
+<br>
+<h2>Technologies Used</h2>
+<h3>Frontend:</h3>
 
 React.js: For building the user interface.
 Redux: State management for React.
 CSS Modules: Scoped and maintainable styles.
-Backend:
+
+<h3>Backend:</h3>
 
 Node.js: Server-side runtime environment.
+<br>
 Express.js: Web framework for Node.js.
+<br>
 WebSocket: Real-time communication.
+<br>
 MongoDB: NoSQL database for storing user data and messages.
+<br>
 Mongoose: ODM (Object Data Modeling) library for MongoDB.
+<br>
 JWT: Secure authentication mechanism.
-Installation
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/your-username/real-time-chat.git
-cd real-time-chat
-Install dependencies for the backend:
-
-env
+<hr>
+<h3>Environment variables</h3>
 Copy code
 MONGODB_URI=your_mongodb_uri
+<br>
 JWT_SECRET=your_jwt_secret
+<br>
 PORT=5000
-Run the backend server:
-
-Acknowledgements
+<br>
+<hr>
+<h3>Acknowledgements</h3>
 Socket.IO for real-time communication.
+<br>
 JWT for secure authentication.
+<br>
 React for the powerful UI library.
+<br>
 Express.js for the robust backend framework.
+<br>
 MongoDB for the scalable database solution.
+<br>
 Contact
-If you have any questions, suggestions, or feedback, feel free to reach out at your-email@example.com.
+If you have any questions, suggestions, or feedback, feel free to reach out at rukundorca@gmail.com.
 
-Thank you for using Real-Time Chat! We hope you enjoy using it as much as we enjoyed building it.
-
+<h4>Thank you for using Real-Time Chat! We hope you enjoy using it as much as we enjoyed building it🎇🎇🎇🎇.</h4>
+<hr>
 Email: rukundorca@gmail.com
 LinkedIn: https://www.linkedin.com/in/bahati-samuel-293578302/
 GitHub: https://github.com/Rukundo-Bahati
