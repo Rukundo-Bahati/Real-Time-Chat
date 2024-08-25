@@ -1,7 +1,12 @@
 .Home {
   position: relative;
   display: grid;
-  grid-template-columns: 18rem auto 20rem;
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 1rem;
-  /* background: var(--bgwhite); */
+}
+
+@media (max-width: 1024px) {
+  .Home {
+    grid-template-columns: 1fr; /* Stacks columns on smaller screens */
+  }
 }

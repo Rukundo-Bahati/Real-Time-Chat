@@ -1,7 +1,43 @@
+[data-theme="dark"] {
+  --yellow: #ca2cf5;
+  --orange: grey;
+  --black: #e0e0e0;
+  --gray: rgba(255, 255, 255, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: #2b2b2b;
+  --buttonBg: #8d8d8d;
+  --inputColor: #b9d5ec12;
+  --photo: #4cb256; /* same as light theme */
+  --video: #090a2a; /* same as light theme */
+  --bgwhite: #121212; /* updated for dark mode */
+  --location: #ef5757;
+  --shedule: #e1ae4a;
+}
+
 :root {
   /* Light theme variables */
   --yellow: #ca2cf5;
-  --orange: #f11ffc;
+  --orange: #ff6f61;
+  --black: #242d49;
+  --gray: rgba(36, 45, 73, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: #fffffffd;
+  --buttonBg: linear-gradient(98.63deg, #a036d3 0%, #d33687 100%);
+  --inputColor: #28343e12;
+  --photo: #4cb256;
+  --video: #4a4eb7;
+  --bgdark: #f5f5f5; /* updated for light mode */
+  --bgwhite: #f7f7f7; /* updated for light mode */
+  --location: #ef5757;
+  --shedule: #e1ae4a;
+}
+
+:root {
+  /* Light theme variables */
+  --yellow: #ca2cf5;
+  --orange: #ff6f61;
   --black: #242d49;
   --gray: rgba(36, 45, 73, 0.65);
   --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
@@ -11,12 +47,10 @@
   --inputColor: #28343e12;
   --photo: #4cb256;
   --video: #4a4eb7;
-  --bgdark: #100f46;
-  --bgwhite: #eeeeee;
+  --bgdark: #f5f5f5; /* updated for light mode */
+  --bgwhite: #f7f7f7; /* updated for light mode */
   --location: #ef5757;
   --shedule: #e1ae4a;
-  --bgblur1: #98e4f3;
-  --bgblur2: #540bc3;
 }
 
 /* Default (light theme) */
@@ -39,24 +73,6 @@
   filter: blur(72px);
 }
 
-[data-theme="dark"] {
-  --yellow: #ca2cf5;
-  --orange: #f11ffc;
-  --black: #ffffff;
-  --gray: rgba(255, 255, 255, 0.65);
-  --profileshadow: 0px 4px 17px 2px rgba(255, 255, 255, 0.25);
-  --hrColor: #cfcdcd;
-  --cardColor: #1e1f5a;
-  --buttonBg: linear-gradient(98.63deg, #a036d3 0%, #d33687 100%);
-  --inputColor: #b9d5ec12;
-  --photo: #4cb256; /* same as light theme */
-  --video: #4a4eb7; /* same as light theme */
-  --bgwhite: #100f46; /* same as light theme */
-  --location: #ef5757;
-  --shedule: #e1ae4a;
-  --bgblur2: #98e4f3;
-  --bgblur1: #540bc3;
-}
 .button {
   display: flex;
   align-items: center;
