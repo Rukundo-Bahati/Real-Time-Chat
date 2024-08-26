@@ -5,12 +5,11 @@ import jwt from "jsonwebtoken";
 
 // Register new user
 export const registerUser = async (req, res) => {
-
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-  req.body.password = hashedPassword
+  req.body.password = hashedPassword;
   const newUser = new UserModel(req.body);
-  const {username} = req.body
+  const { username } = req.body;
   try {
     // addition new
     const existingUser = await UserModel.findOne({ username });
@@ -22,7 +21,7 @@ export const registerUser = async (req, res) => {
     const user = await newUser.save();
     const token = jwt.sign(
       { username: user.username, id: user._id },
-     c.get('JWTKEY'),
+      c.get("JWTKEY"),
       { expiresIn: "1h" }
     );
     res.status(200).json({ user, token });
@@ -48,13 +47,13 @@ export const loginUser = async (req, res) => {
       } else {
         const token = jwt.sign(
           { username: user.username, id: user._id },
-          c.get('JWTKEY'),
+          c.get("JWTKEY"),
           { expiresIn: "1d" }
         );
         res.status(200).json({ user, token });
       }
     } else {
-      res.status(404).json("User not found");
+      res.status(404).json("User not found❗Create an account");
     }
   } catch (err) {
     res.status(500).json(err);

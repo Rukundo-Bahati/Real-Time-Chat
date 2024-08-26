@@ -4,6 +4,7 @@
   background-color: var(--cardColor);
   padding: 1rem;
   border-radius: 1rem;
+  flex-wrap: nowrap;
 }
 
 .PostShare > img {
@@ -11,10 +12,13 @@
   width: 3rem;
   height: 3rem;
 }
+
 .PostShare > div {
   display: flex;
   flex-direction: column;
-  width: 90%;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
   gap: 1rem;
 }
 
@@ -26,17 +30,18 @@
   font-size: 17px;
   border: none;
   outline: none;
+  width: 100%;
 }
 
 .postOptions {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Allows wrapping of options on smaller screens */
 }
 
 .option {
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 5px 10px;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -47,16 +52,18 @@
 .option:hover {
   cursor: pointer;
 }
+
 .ps-button {
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 5px 20px;
   font-size: 12px;
 }
 
-.previewMedia > img {
-  position: relative;
-  /* display: flex; */
+.previewMedia > img,
+.previewMedia > video {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .previewMedia > svg {
@@ -66,16 +73,66 @@
   cursor: pointer;
 }
 
-.previewMedia > img {
-  width: 100%;
-  max-height: 20rem;
-  object-fit: cover;
-  border-radius: 0.5rem;
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .PostShare {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .PostShare > div {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .postOptions {
+    gap: 0.5rem;
+    justify-content: space-around; /* Space out options evenly */
+  }
+
+  .option {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .ps-button {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  .previewMedia > img,
+  .previewMedia > video {
+    max-height: 15rem; /* Reduce media height on smaller screens */
+  }
 }
 
-.previewMedia > video {
-  width: 100%;
-  max-height: 20rem;
-  object-fit: cover;
-  border-radius: 0.5rem;
+@media (max-width: 480px) {
+  .PostShare {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+  }
+
+  .PostShare > img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .postOptions {
+    flex-direction: column; /* Stack options vertically */
+    gap: 0.5rem;
+  }
+
+  .option {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  .ps-button {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .previewMedia > img,
+  .previewMedia > video {
+    max-height: 12rem; /* Further reduce media height */
+  }
 }

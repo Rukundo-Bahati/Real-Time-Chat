@@ -1,71 +1,118 @@
 .Auth {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  gap: 4rem;
-  position: relative;
-}
-
-.Auth > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  /* background: #140149; */
 }
 
 .all {
-  padding: 2rem;
-  background: #130150;
-  border-radius: 7px;
-  box-shadow: 0 0 7px #0ed;
-  gap: 2rem;
+  background: #140149;
+  box-shadow: 0 0 12px #0ef;
+  border-radius: 6px;
+  gap: 1rem;
+  padding: 1rem;
+  width: 40%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: max-content;
 }
+
+@media screen and (max-width: 1024px) {
+  .Auth {
+    height: 100vh;
+  }
+  .all {
+    width: 85%;
+  }
+}
+
 
 /* left side */
 .a-left {
-  gap: 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .a-left > img {
   width: 4rem;
   height: 4rem;
+  /* margin-bottom: 1rem; */
 }
 
 .Webname > h1 {
-  font-size: 3rem;
-  background-color: red;
-  /* Create the gradient. */
+  font-size: 2rem;
   background-image: var(--buttonBg);
-
-  /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
-
-  /* Use the text as a mask for the background. */
-  /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+  text-align: center;
+  margin: 0;
 }
 
 .Webname > h6 {
   font-size: 0.85rem;
   color: #ddd;
+  text-align: center;
 }
 
 /* right side */
-
 .authForm {
   background-color: var(--cardColor);
   border-radius: 1rem;
   padding: 1rem;
+  box-sizing: border-box;
 }
 
 .authForm > div {
   width: 100%;
-  align-items: center;
-  justify-content: center;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .Auth {
+    flex-direction: row; /* Row layout on larger screens */
+    padding: 1.5rem;
+  }
+
+  .all {
+    flex-direction: row;
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .a-left {
+    margin-bottom: 0;
+    margin-right: 2rem; /* Add margin to the right side for spacing */
+  }
+
+  .a-left > img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .Webname > h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .all {
+    max-width: 800px;
+  }
+
+  .a-left > img {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .Webname > h1 {
+    font-size: 3rem;
+  }
 }

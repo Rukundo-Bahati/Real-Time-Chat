@@ -2,19 +2,26 @@ import PostModel from "../models/postModel.js";
 import UserModel from "../models/userModel.js";
 import mongoose from "mongoose";
 
-// creating a post
-
+//create a post
 export const createPost = async (req, res) => {
-  const newPost = new PostModel(req.body);
-
   try {
-    await newPost.save();
-    res.status(200).json(newPost);
+    const { userId, desc, image, video, file } = req.body;
+
+    const newPost = new PostModel({
+      userId,
+      desc: desc || "", // Ensure `desc` is defaulted to an empty string if not provided
+      image,
+      video,
+      file
+    });
+
+    const savedPost = await newPost.save();
+    res.status(201).json(savedPost);
   } catch (error) {
-    res.status(500).json(error);
+    console.error("Error creating post:", error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
-
 // get a post
 
 export const getPost = async (req, res) => {

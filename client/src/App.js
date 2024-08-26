@@ -8,12 +8,17 @@ import { ThemeProvider } from "./themeProvider";
 import { ThemeContext } from './themeProvider'; 
 import Chat from "./pages/Chat/Chat";
 import { useContext } from "react";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const user = useSelector((state) => state.authReducer.authData);
   const { theme } = useContext(ThemeContext);
 
   return (
+    <>
+    <ToastContainer />
     <div
       className="App"
       data-theme={theme}
@@ -24,8 +29,6 @@ function App() {
             : "auto",
       }}
     >
-      <div className="blur" style={{ top: "-18%", right: "0" }}></div>
-      <div className="blur" style={{ top: "36%", left: "-8rem" }}></div>
       <Routes>
         <Route
           path="/"
@@ -58,6 +61,7 @@ function App() {
         />
       </Routes>
     </div>
+    </>
   );
 }
 

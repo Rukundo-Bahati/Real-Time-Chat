@@ -3,8 +3,7 @@ import "./PostShare.css";
 import {
   UilScenery,
   UilPlayCircle,
-  UilLocationPoint,
-  UilSchedule,
+  UilFile,
   UilTimes,
 } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,7 +11,9 @@ import {
   uploadImage,
   uploadPost,
   uploadVideo,
+  uploadFile,
 } from "../../actions/UploadAction";
+import { toast } from "react-toastify";
 
 const PostShare = () => {
   const dispatch = useDispatch();
@@ -20,66 +21,93 @@ const PostShare = () => {
   const loading = useSelector((state) => state.postReducer.uploading);
   const [image, setImage] = useState(null);
   const [video, setVideo] = useState(null);
+  const [file, setFile] = useState(null); // State for file
   const desc = useRef();
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
-  // handle media change
+  // Handle media change for images, videos, and files
   const onMediaChange = (event, setMedia) => {
     if (event.target.files && event.target.files[0]) {
-      let file = event.target.files[0];
-      setMedia(file);
+      let selectedFile = event.target.files[0];
+      setMedia(selectedFile);
     }
   };
 
   const imageRef = useRef();
   const videoRef = useRef();
+  const fileRef = useRef(); // Reference for file input
 
-  // handle post upload
+  // Handle file upload
+  const handleFileUpload = async (file, type) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch(`/upload/${type}`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("File upload failed");
+      }
+
+      const result = await response.json();
+      console.log(result.message);
+      return result.fileName; // Assuming the server returns file name
+    } catch (error) {
+      toast.error(`Failed to upload ${type}.`);
+      console.error("Error:", error);
+      return null;
+    }
+  };
+
+  // Handle post upload
   const handleUpload = async (e) => {
     e.preventDefault();
 
-    // post data
     const newPost = {
       userId: user._id,
-      desc: desc.current.value,
+      desc: desc.current.value.trim() || ""
     };
 
-    // if there is an image with post
+    let imageFileName = null;
+    let videoFileName = null;
+    let fileFileName = null;
+
+    // Handle image upload
     if (image) {
-      const data = new FormData();
-      const fileName = Date.now() + image.name;
-      data.append("name", fileName);
-      data.append("file", image);
-      newPost.image = fileName;
-      try {
-        dispatch(uploadImage(data));
-      } catch (err) {
-        console.log(err);
-      }
+      imageFileName = await handleFileUpload(image, 'images');
+      if (imageFileName) newPost.image = imageFileName;
     }
 
-    // if there is a video with post
+    // Handle video upload
     if (video) {
-      const data = new FormData();
-      const fileName = Date.now() + video.name;
-      data.append("name", fileName);
-      data.append("file", video);
-      newPost.video = fileName;
-      try {
-        dispatch(uploadVideo(data));
-      } catch (err) {
-        console.log(err);
-      }
+      videoFileName = await handleFileUpload(video, 'videos');
+      if (videoFileName) newPost.video = videoFileName;
     }
 
-    dispatch(uploadPost(newPost));
-    resetShare();
+    // Handle file upload
+    if (file) {
+      fileFileName = await handleFileUpload(file, 'files');
+      if (fileFileName) newPost.file = fileFileName;
+    }
+
+    try {
+      dispatch(uploadPost(newPost));
+      toast.success("Post shared successfully!");
+      resetShare();
+    } catch (err) {
+      toast.error("Failed to share post.");
+      console.log(err);
+    }
   };
 
   // Reset Post Share
   const resetShare = () => {
     setImage(null);
     setVideo(null);
+    setFile(null); // Reset file state
     desc.current.value = "";
   };
 
@@ -100,6 +128,7 @@ const PostShare = () => {
           required
           ref={desc}
         />
+
         <div className="postOptions">
           <div
             className="option"
@@ -118,20 +147,22 @@ const PostShare = () => {
             <UilPlayCircle />
             Video
           </div>
-          <div className="option" style={{ color: "var(--location)" }}>
-            <UilLocationPoint />
-            Location
+
+          <div
+            className="option"
+            style={{ color: "dodgerblue" }}
+            onClick={() => fileRef.current.click()}
+          >
+            <UilFile />
+            File
           </div>
-          <div className="option" style={{ color: "var(--schedule)" }}>
-            <UilSchedule />
-            Schedule
-          </div>
+
           <button
             className="button ps-button"
             onClick={handleUpload}
             disabled={loading}
           >
-            {loading ? "uploading" : "Share"}
+            {loading ? "Uploading" : "Share"}
           </button>
 
           <div style={{ display: "none" }}>
@@ -144,6 +175,11 @@ const PostShare = () => {
               type="file"
               ref={videoRef}
               onChange={(e) => onMediaChange(e, setVideo)}
+            />
+            <input
+              type="file"
+              ref={fileRef} // File input reference
+              onChange={(e) => onMediaChange(e, setFile)}
             />
           </div>
         </div>
@@ -161,9 +197,17 @@ const PostShare = () => {
             <video src={URL.createObjectURL(video)} controls />
           </div>
         )}
+
+        {file && (
+          <div className="previewMedia">
+            <UilTimes onClick={() => setFile(null)} />
+            <p>File: {file.name}</p>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
 export default PostShare;
+

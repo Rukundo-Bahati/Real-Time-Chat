@@ -58,7 +58,7 @@ export const updateUser = async (req, res) => {
       });
       const token = jwt.sign(
         { username: user.username, id: user._id }, // First argument: payload
-        config.get(JWTKEY),                        // Second argument: secret or private key
+        config.get('JWTKEY'),                        // Second argument: secret or private key
         { expiresIn: "1d" }                        // Third argument: options object
       );
       

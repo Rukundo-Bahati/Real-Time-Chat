@@ -5,8 +5,8 @@ import RightSide from "../components/RightSide/RightSide";
 import "./Home.css";
 const Home = () => {
   return (
-  <div className="Home">
-      <ProfileSide/>
+    <div className="Home">
+      <ProfileSide />
       <PostSide />
       <RightSide />
     </div>
