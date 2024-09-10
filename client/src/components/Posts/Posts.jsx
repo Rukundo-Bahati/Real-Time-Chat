@@ -9,19 +9,21 @@ const Posts = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.authReducer.authData);
-  const posts = useSelector((state) => state.postReducer.posts); // Use Redux state
+  const posts = useSelector((state) => state.postReducer.posts) || []; // Default to empty array
   const loading = useSelector((state) => state.postReducer.loading);
 
   useEffect(() => {
-    dispatch(getTimelinePosts(user._id));
-  }, [dispatch, user._id]);
+    if (user?._id) {
+      dispatch(getTimelinePosts(user._id));
+    }
+  }, [dispatch, user?._id]);
 
   const filteredPosts = params.id
     ? posts.filter((post) => post.userId === params.id)
     : posts;
 
   return (
-    <div className="Posts">
+    <div className="posts">
       {loading
         ? "Fetching posts...."
         : filteredPosts.length === 0
