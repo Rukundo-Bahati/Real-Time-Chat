@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-right: 1rem;
 }
 
 
 .navIcons{
-    margin-top: 1rem;
+    margin: 1rem 1rem;
     display: flex;
     justify-content: space-between;
 }

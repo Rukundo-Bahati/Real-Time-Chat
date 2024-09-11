@@ -3,6 +3,7 @@
     border-radius: 1rem;
     display: grid;
     grid-template-rows: 14vh 60vh 13vh;
+    margin: 0.8rem;
 }
 
 .chat-header {

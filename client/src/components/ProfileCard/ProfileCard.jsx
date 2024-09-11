@@ -10,7 +10,7 @@ const ProfileCard = ({ location = "default" }) => {
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
-    <div className="ProfileCard">
+     <div className="ProfileCard">
       <div className="ProfileImages">
         <img
           src={

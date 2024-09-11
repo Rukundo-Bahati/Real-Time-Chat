@@ -1,7 +1,7 @@
 import UserModel from "../models/userModel.js";
 import config from 'config'
 import auth from "../middleware/AuthMiddleware.js";
-import  admin from "../middleware/admin.js";
+import admin from "../middleware/admin.js";
 
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";

@@ -44,14 +44,17 @@ const storage = multer.diskStorage({
         uploadPath = filesDir;
         break;
       default:
+        console.error("Invalid type:", type);
         return cb(new Error("Invalid type"), null);
     }
 
-    cb(null, uploadPath); // Use the determined path
+    console.log('Upload Path:', uploadPath); // Debugging: Log the upload path
+    cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${Date.now()}${ext}`);
+    // Provide a default name if req.body.name is not defined
+    const fileName = req.body.name || file.originalname;
+    cb(null, fileName);
   },
 });
 
@@ -85,6 +88,9 @@ const router = express.Router();
 // Route to handle file uploads
 router.post("/:type", upload.single("file"), (req, res) => {
   try {
+    console.log('Request Type:', req.params.type); // Debugging: Log the request type
+    console.log('File Details:', req.file); // Debugging: Log file details
+
     if (!req.file) {
       return res.status(400).send("No file uploaded.");
     }
@@ -94,6 +100,7 @@ router.post("/:type", upload.single("file"), (req, res) => {
       fileName: req.file.filename,
     });
   } catch (error) {
+    console.error('Upload Error:', error); // Debugging: Log any errors
     res.status(500).send("Failed to upload file.");
   }
 });
