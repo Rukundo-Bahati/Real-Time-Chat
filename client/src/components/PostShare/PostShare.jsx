@@ -8,10 +8,7 @@ import {
 } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  uploadImage,
-  uploadPost,
-  uploadVideo,
-  uploadFile,
+  uploadPost
 } from "../../actions/UploadAction";
 import { toast } from "react-toastify";
 
