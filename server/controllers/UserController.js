@@ -111,7 +111,7 @@ export const followUser = async (req, res) => {
         await followingUser.updateOne({ $push: { following: id } });
         res.status(200).json("User followed!");
       } else {
-        res.status(403).json("you are already following this id");
+        res.status(403).json("you are already following this user");
       }
     } catch (error) {
       console.log(error);

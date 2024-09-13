@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import socketHandler from "./socket/index.js";  // Import the socket handler
+import socketHandler from "./socket/index.js";  
 import "./connection/db.js"; 
 
 // routes
@@ -42,4 +42,4 @@ app.use("/message", MessageRoute);
 // Integrate Socket.io with your server
 socketHandler(io);
 
-server.listen(PORT, () => console.log(`Server Started On Port ${PORT}`));
+server.listen(PORT, () => console.log(`Server is running On Port ${PORT}`));
