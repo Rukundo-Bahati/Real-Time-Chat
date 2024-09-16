@@ -3,7 +3,7 @@ import config from 'config'
 import auth from "../middleware/AuthMiddleware.js";
 import admin from "../middleware/admin.js";
 
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 // Get a User
 export const getUser = async (req, res) => {
