@@ -33,6 +33,7 @@ const Post = ({ data }) => {
       <img
         src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""
+        
       />
       <div className="postReact">
         <UilThumbsUp

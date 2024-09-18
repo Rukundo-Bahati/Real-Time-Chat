@@ -13,7 +13,6 @@ export const registerUser = async (req, res) => {
   try {
     // addition new
     const existingUser = await UserModel.findOne({ username });
-
     if (existingUser)
       return res.status(400).json({ message: "User already exists" });
 
@@ -32,7 +31,6 @@ export const registerUser = async (req, res) => {
 
 // Login User
 
-// Changed
 export const loginUser = async (req, res) => {
   const { username, password } = req.body;
 
